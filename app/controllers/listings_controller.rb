@@ -1,4 +1,6 @@
 class ListingsController < ApplicationController
+  before_filter :ensure_logged_in, only: [:index, :create, :destroy, :latest]
+  
   def index
     @listings = Listing.all
   end
@@ -17,6 +19,7 @@ class ListingsController < ApplicationController
 
   def create
     @listing = Listing.new(listing_params)
+    @listing.user_id = current_user.id
 
     if @listing.save
       redirect_to listings_url
