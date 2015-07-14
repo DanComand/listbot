@@ -1,0 +1,34 @@
+<%= form_for(@listing) do |f| %>
+
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :bedrooms %><br />
+    <%= f.text_field :bedrooms %>
+  </div>
+  <div class="field">
+    <%= f.label :bathrooms %><br />
+    <%= f.text_field :bathrooms %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :square_feet %><br />
+    <%= f.text_field :square_feet %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
